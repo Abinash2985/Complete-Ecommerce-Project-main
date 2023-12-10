@@ -42,12 +42,9 @@ function Cart() {
   const shipping = parseInt(100);
 
   const grandTotal = shipping + totalAmout;
-  // console.log(grandTotal)
-
-  /**========================================================================
-   *!                           Payment Intigration
-   *========================================================================**/ 
-
+  
+  // Payment Intigration using razorpay
+   
   const [name, setName] = useState("")
   const [address, setAddress] = useState("");
   const [pincode, setPincode] = useState("")
@@ -88,7 +85,7 @@ function Cart() {
       amount: parseInt(grandTotal * 100),
       currency: "INR",
       order_receipt: 'order_rcptid_' + name,
-      name: "E-Bharat",
+      name: "My Website",
       description: "for testing purpose",
       handler: function (response) {
         console.log(response)
